@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Welcome to Expense Tracker</h1>
-    
+
     <!-- Add Expense Form -->
     <form id="expenseForm">
         <input type="number" id="amount" placeholder="Amount" required>
@@ -16,11 +16,11 @@
         <input type="date" id="date" required>
         <button type="submit">Add Expense</button>
     </form>
-    
+
     <!-- Display Expenses -->
     <h2>Expense List</h2>
     <ul id="expenseList"></ul>
-    
+
     <!-- Passkey protection script -->
     <script>
         let storedPasskey = localStorage.getItem("passkey");

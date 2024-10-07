@@ -26,6 +26,9 @@ document.getElementById('expenseForm').addEventListener('submit', function(e) {
 
     // Refresh the displayed list of expenses
     displayExpenses();
+
+    // Turn the screen black with a smooth transition
+    document.body.style.backgroundColor = "#000000";
 });
 
 // Function to display expenses from localStorage
@@ -54,3 +57,20 @@ function displayExpenses() {
 
 // Call the displayExpenses function when the page loads to show any previously added expenses
 displayExpenses();
+
+// Function to change input field colors based on user input
+function setupInputColorChange(inputId, colorHex) {
+    const inputElement = document.getElementById(inputId);
+    inputElement.addEventListener('input', function() {
+        if (this.value.trim() !== "") {
+            this.style.backgroundColor = colorHex;
+        } else {
+            this.style.backgroundColor = "#E5E2CA"; // Reset to original color if input is empty
+        }
+    });
+}
+
+// Setup color changes for each input field
+setupInputColorChange('amount', '#F5F5DC');    // Amount input
+setupInputColorChange('category', '#9F8C76');  // Category input
+setupInputColorChange('date', '#84714B');      // Date input
