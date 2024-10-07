@@ -10,7 +10,7 @@
     <h1>Welcome to Expense Tracker</h1>
 
     <!-- Image of saving money -->
-    <img src="path/to/your/image.jpg" alt="Jar of coins labeled 'SAVE'">
+    <img id="saveImage" alt="Jar of coins labeled 'SAVE'">
 
     <!-- Add Expense Form -->
     <form id="expenseForm">
@@ -37,6 +37,8 @@
                 window.location.reload();
             }
         }
+        // Set the correct image path
+        document.getElementById('saveImage').src = "images/save-jar.png";
     </script>
     <!-- Link to the external script -->
     <script src="js/script.js"></script>
