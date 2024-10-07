@@ -21,8 +21,8 @@
     <h2>Expense List</h2>
     <ul id="expenseList"></ul>
     
+    <!-- Passkey protection script -->
     <script>
-        // Passkey protection script
         let storedPasskey = localStorage.getItem("passkey");
         if (!storedPasskey) {
             let newPasskey = prompt("Set your passkey:");
@@ -35,6 +35,7 @@
             }
         }
     </script>
+    <!-- Link to the external script -->
     <script src="js/script.js"></script>
 </body>
 </html>
