@@ -10,7 +10,7 @@
     <h1>Welcome to Expense Tracker</h1>
 
     <!-- Image of saving money -->
-    <img id="saveImage" alt="Jar of coins labeled 'SAVE'">
+    <img id="saveImage" src="images/save-jar.png" alt="Jar of coins labeled 'SAVE'" class="background-image">
 
     <!-- Add Expense Form -->
     <form id="expenseForm">
@@ -26,19 +26,22 @@
 
     <!-- Passkey protection script -->
     <script>
-        let storedPasskey = localStorage.getItem("passkey");
-        if (!storedPasskey) {
-            let newPasskey = prompt("Set your passkey:");
-            localStorage.setItem("passkey", newPasskey);
-        } else {
-            let userPasskey = prompt("Enter your passkey:");
-            if (userPasskey !== storedPasskey) {
-                alert("Wrong passkey!");
-                window.location.reload();
+        window.onload = function() {
+            let storedPasskey = localStorage.getItem("passkey");
+            if (!storedPasskey) {
+                let newPasskey = prompt("Set your passkey:");
+                localStorage.setItem("passkey", newPasskey);
+            } else {
+                let userPasskey = prompt("Enter your passkey:");
+                if (userPasskey !== storedPasskey) {
+                    alert("Wrong passkey!");
+                    window.location.reload();
+                }
             }
-        }
-        // Set the correct image path
-        document.getElementById('saveImage').src = "images/save-jar.png";
+            // Ensure the image path is set correctly
+            document.getElementById('saveImage').src = "images/save-jar.png";
+            console.log("Image path set to: images/save-jar.png"); // Log the path to check
+        };
     </script>
     <!-- Link to the external script -->
     <script src="js/script.js"></script>
